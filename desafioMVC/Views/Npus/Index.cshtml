@@ -1,0 +1,47 @@
+﻿@model IEnumerable<desafioMVC.Models.Npu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>FSBR - DESAFIO CRUD MVC</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Cadastrar Novo</a>
+</p>
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.npu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dataCadastro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uf)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.npu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataCadastro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.uf)
+            </td>
+            <td>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                <a class="btn btn-light" asp-action="Details" asp-route-id="@item.id">Visualizar</a> |
+                <a class="btn btn btn-danger" asp-action="Delete" asp-route-id="@item.id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

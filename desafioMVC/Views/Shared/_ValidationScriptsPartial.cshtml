@@ -1,0 +1,32 @@
+﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script>
+
+    async function callChangefunc(val) {
+        console.log(val);
+        const URL = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${val}/distritos`;
+        console.log(URL);
+
+        const resp = await fetch(URL);
+        if (resp.status === 200) {
+            const obj = await resp.json();
+            console.log('aqui', obj);
+
+            $.each(obj, function (index, value) {
+
+                console.log(value);
+
+                //Make sure value is the string you want to attach by putting a debugger here;
+                //Append code;
+
+                $('#municipio').append($("<option></option>")
+                    .attr("value", value.id)
+                    .text(value.nome));
+
+            });
+            
+        }
+        
+       // window.location.href = "/Npus/ConsultaMunicipio?uf=" + val;        
+    }
+</script>

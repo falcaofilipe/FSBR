@@ -1,0 +1,59 @@
+﻿@model desafioMVC.Models.Npu
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastrar</h1>
+
+<h4>Npu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nomeProcesso" class="control-label"></label>
+                <input asp-for="nomeProcesso" class="form-control" />
+                <span asp-validation-for="nomeProcesso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="npu" class="control-label"></label>
+                <input asp-for="npu" class="form-control" />
+                <span asp-validation-for="npu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dataCadastro" class="control-label"></label>
+                <input asp-for="dataCadastro" class="form-control" />
+                <span asp-validation-for="dataCadastro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dataVisualizacao" class="control-label"></label>
+                <input asp-for="dataVisualizacao" class="form-control" />
+                <span asp-validation-for="dataVisualizacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="uf" class="control-label"></label>
+                <!--<input asp-for="uf" class="form-control" />-->
+                @Html.DropDownListFor(model => model.uf, new SelectList(Model.ListaUf, "Text", "Text"), new { @class = "form-control", @onchange = "callChangefunc(this.value)" })
+                <span asp-validation-for="uf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="municipio" class="control-label"></label>
+                @Html.DropDownListFor(model => model.municipio, new SelectList(Model.ListaMunicipio, "Text", "Text"), new { @class = "form-control" })
+                <!--<select asp-for="municipio" class="form-control" asp-items="Model.ListaMunicipio" />-->
+                <span asp-validation-for="municipio" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" /> |
+                <a class="btn btn-light" asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

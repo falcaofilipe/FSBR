@@ -1,0 +1,54 @@
+﻿@model desafioMVC.Models.Npu
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhamento</h1>
+
+<div>
+    <h4>Npu</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nomeProcesso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nomeProcesso)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.npu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.npu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dataCadastro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataCadastro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dataVisualizacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataVisualizacao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.uf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.uf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.municipio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.municipio)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.id">Editar</a> |
+    <a class="btn btn-light" asp-action="Index">Voltar</a>
+</div>
