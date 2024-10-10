@@ -7,6 +7,10 @@ namespace desafioMVC.Models
 {
     public class Npu
     {
+        //Propriedade de classe deve começar com letra maiuscula, peço desculpa por isso.
+        //Atualmente estou tirando uma certificação C# pela Microsoft.
+        //Também esqueci de armazenar o cód do municipio.
+
         [Key]
         public int id { get; set; }
 

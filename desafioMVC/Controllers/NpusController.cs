@@ -13,7 +13,7 @@ namespace desafioMVC.Controllers
         private readonly Npu ibgeApi = new()
         {
             ListaUf = UF.ConsultaUf(),
-            ListaMunicipio = Municipios.ConsultaMunicipios("")
+            ListaMunicipio = Municipios.ConsultaMunicipios("RO")//inicializando lista de municipios, listaUf sempre começa com Rondônia 
         };
 
         public NpusController(ApplicationDbContext context, IWebHostEnvironment environment)
@@ -156,6 +156,8 @@ namespace desafioMVC.Controllers
             return _context.Npus.Any(e => e.id == id);
         }
 
+        //não consegui retornar valor pra view sem redirecionar para outra tela
+        //por isso consumi a api novamente via js usando o onchange.
         public ViewResult ConsultaMunicipio(string uf)
         {
 

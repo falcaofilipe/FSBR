@@ -3,24 +3,23 @@
 <script>
 
     async function callChangefunc(val) {
-        console.log(val);
+        //console.log(val);
         const URL = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${val}/distritos`;
-        console.log(URL);
+        //console.log(URL);
 
         const resp = await fetch(URL);
         if (resp.status === 200) {
             const obj = await resp.json();
-            console.log('aqui', obj);
+            //console.log('aqui', obj);
+
+            $("#municipio").empty();//limpando antes do append.
 
             $.each(obj, function (index, value) {
 
-                console.log(value);
-
-                //Make sure value is the string you want to attach by putting a debugger here;
-                //Append code;
+               //console.log(value);
 
                 $('#municipio').append($("<option></option>")
-                    .attr("value", value.id)
+                    .attr("value", value.nome)
                     .text(value.nome));
 
             });
