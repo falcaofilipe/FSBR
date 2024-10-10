@@ -26,7 +26,7 @@ CREATE TABLE [dbo].[Npus] (
     CONSTRAINT [PK_Npus] PRIMARY KEY CLUSTERED ([id] ASC)
 );
 
-Obs: Não ha necessidade de criar a base de dados e tabela, basta rodar o comando Add-Migration Npus e update-database no janela Console do Gerenciador de Pacotes.
+Obs: Não ha necessidade de criar a base de dados e tabela, basta rodar o comando Add-Migration Npus e update-database na janela Console do Gerenciador de Pacotes.
 
 Usei Migration para criação e manutenção da base de dados. Instalando o pacote Microsoft.EntityFrameworkCore.SqlServer(8.0.8) se tem o sqlserver integrado ao visual studio.
 
