@@ -30,5 +30,9 @@ Obs: Não ha necessidade de criar a base de dados e tabela, basta rodar o comand
 
 Usei Migration para criação e manutenção da base de dados. Instalando o pacote Microsoft.EntityFrameworkCore.SqlServer(8.0.8) se tem o sqlserver integrado ao visual studio.
 
+Não prestei atenção que era pra armazenar também o código do municipio e não pude implementar a paginação.
+
+Alguns comentários foram deixados propositalmente.
+
 
  
