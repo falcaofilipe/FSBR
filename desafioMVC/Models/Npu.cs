@@ -20,7 +20,7 @@ namespace desafioMVC.Models
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [DisplayName("NPU")]
-        [StringLength(25, MinimumLength = 25, ErrorMessage = "O campo {0} está em formato incorreto")]
+        [RegularExpression("^\\d{7}-\\d{2}\\.\\d{4}\\.\\d\\.\\d{2}\\.\\d{4}$", ErrorMessage = "O campo {0} está em formato incorreto")]
         public string npu { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]

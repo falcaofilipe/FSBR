@@ -8,6 +8,6 @@ $(document).ready(function () {
     $("#npu").inputmask("mask", {
         "mask": "9999999-99.9999.9.99.9999"
     }, {
-        reverse: true
+        reverse: false
     });
 })
